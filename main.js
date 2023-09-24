@@ -32,10 +32,16 @@ function likeClick(event) {
 }
 
 function heartStatus(event) {
+  const heart = event.target.innerText;
   const activeClass = event.target.classList;
-  if (activeClass.length == 1) {
+  if (heart == EMPTY_HEART) {
+    event.target.innerHTML = '';
+    event.target.innerText = FULL_HEART;
     activeClass.add('activated-heart');
-  } else {activeClass.remove('activated-heart')}
+  } else {
+    event.target.innerHTML = '';
+    event.target.innerText = EMPTY_HEART;
+    activeClass.remove('activated-heart')}
 }
 
 
